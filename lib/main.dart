@@ -2,7 +2,9 @@ import 'package:firestore_practice/bloc_provider.dart';
 import 'package:firestore_practice/src/home_bloc.dart';
 import 'package:flutter/material.dart';
 
-import 'package:firestore_practice/src/home.dart';
+import 'package:firestore_practice/CRUD/Test.dart';
+//import 'package:firestore_practice/src/home.dart';
+import 'package:firestore_practice/CRUD/testcamera.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,10 +18,11 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: BlocProvider(
-        bloc: HomeBloc(),
-        child: FirestoreCRUDPage(),
-      )
+      home: CameraFeature()
+// */BlocProvider(
+//        bloc: HomeBloc(),
+//        child: FirestoreCRUDPage(),w
+//      )
     );
   }
 }

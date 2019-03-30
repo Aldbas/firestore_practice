@@ -29,7 +29,7 @@ class HomeBloc implements BlocBase{
   }
 
   void updateData(DocumentSnapshot doc) async {
-    db.updateData(doc);
+    String id = await db.updateData(doc);
   }
 
   void deleteData(DocumentSnapshot doc) async {

@@ -17,7 +17,7 @@ class FirestoreCRUDPageState extends State<FirestoreCRUDPage> {
   String name;
   String comment;
 
-  Card buildItem(DocumentSnapshot doc, HomeBloc bloc) {
+  Card buildItem(DocumentSnapshot doc, HomeBloc bloc,) {
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -37,7 +37,7 @@ class FirestoreCRUDPageState extends State<FirestoreCRUDPage> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
                 FlatButton(
-                  onPressed: () => bloc.updateData(doc),
+                  onPressed: () => db.updateData(doc),
                   child: Text(
                       'Update todo', style: TextStyle(color: Colors.white)),
                   color: Colors.green,
@@ -84,9 +84,12 @@ class FirestoreCRUDPageState extends State<FirestoreCRUDPage> {
         children: <Widget>[
           Form(
             key: _formKey,
-            child: buildTextFormField(),
+            child: Column(
+              children: <Widget>[
+                buildTextFormField(),
+              ],
+            )
           ),
-          makeComments(),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
